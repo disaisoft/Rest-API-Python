@@ -5,6 +5,7 @@ app = Flask (__name__)
 from products import products
 
 
+
 @app.route('/prueba')
 def productos():
     return jsonify({"menssaje": "Es una puta prueba" })
@@ -30,6 +31,7 @@ def addProduct():
     products.append(new_product)
     return jsonify({"message": "Product Added Succesfully", "products": products})
 
+@app.route('/products/<string:product_name>', methods=['PUT'])
 
 
 if __name__ == '__main__':
